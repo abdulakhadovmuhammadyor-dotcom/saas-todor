@@ -1,0 +1,154 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-line-seed);
+  --font-mono: var(--font-geist-mono, monospace);
+  --font-heading: var(--font-great-vibes);
+  --color-paper: var(--brand-paper);
+  --color-sage: var(--brand-sage);
+  --color-stone: var(--brand-stone);
+  --color-gold: var(--brand-gold);
+  --color-brown: var(--brand-brown);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --brand-paper: #fafafa;
+  --brand-sage: #d0d2cf;
+  --brand-stone: #575c55;
+  --brand-gold: #86612f;
+  --brand-brown: #52311b;
+
+  --background: #fafafa;
+  --foreground: #2a211b;
+  --card: #ffffff;
+  --card-foreground: #2a211b;
+  --popover: #ffffff;
+  --popover-foreground: #2a211b;
+  --primary: #52311b;
+  --primary-foreground: #fafafa;
+  --secondary: #d0d2cf;
+  --secondary-foreground: #2a211b;
+  --muted: #eeefec;
+  --muted-foreground: #575c55;
+  --accent: #86612f;
+  --accent-foreground: #fafafa;
+  --destructive: #9c3b2f;
+  --border: #d0d2cf;
+  --input: #d0d2cf;
+  --ring: #86612f;
+  --chart-1: #86612f;
+  --chart-2: #575c55;
+  --chart-3: #d0d2cf;
+  --chart-4: #52311b;
+  --chart-5: #a98a5c;
+  --radius: 0.875rem;
+  --sidebar: #fafafa;
+  --sidebar-foreground: #2a211b;
+  --sidebar-primary: #52311b;
+  --sidebar-primary-foreground: #fafafa;
+  --sidebar-accent: #eeefec;
+  --sidebar-accent-foreground: #2a211b;
+  --sidebar-border: #d0d2cf;
+  --sidebar-ring: #86612f;
+}
+
+.dark {
+  --background: #1b1511;
+  --foreground: #fafafa;
+  --card: #241c16;
+  --card-foreground: #fafafa;
+  --popover: #241c16;
+  --popover-foreground: #fafafa;
+  --primary: #a67b43;
+  --primary-foreground: #1b1511;
+  --secondary: #3a2e25;
+  --secondary-foreground: #fafafa;
+  --muted: #2e241d;
+  --muted-foreground: #d0d2cf;
+  --accent: #b68b52;
+  --accent-foreground: #1b1511;
+  --destructive: #d46a58;
+  --border: #4a3a2c;
+  --input: #4a3a2c;
+  --ring: #b68b52;
+  --chart-1: #b68b52;
+  --chart-2: #d0d2cf;
+  --chart-3: #575c55;
+  --chart-4: #86612f;
+  --chart-5: #8b8378;
+  --sidebar: #1b1511;
+  --sidebar-foreground: #fafafa;
+  --sidebar-primary: #a67b43;
+  --sidebar-primary-foreground: #1b1511;
+  --sidebar-accent: #2e241d;
+  --sidebar-accent-foreground: #fafafa;
+  --sidebar-border: #4a3a2c;
+  --sidebar-ring: #b68b52;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans scroll-smooth;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+  ::selection {
+    background: var(--brand-gold);
+    color: var(--brand-paper);
+  }
+}
+
+.font-heading {
+  font-family: var(--font-heading), cursive;
+}
+
+.grain {
+  background-image: radial-gradient(circle at 18% 12%, rgba(134, 97, 47, 0.14), transparent 42%),
+    radial-gradient(circle at 82% 78%, rgba(82, 49, 27, 0.12), transparent 46%);
+}
